@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"> 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
     <div class="bg">
@@ -15,7 +17,40 @@
     </div>
     <header class="header">
         <div class="header__logo">Michael Davis</div>
-        <a href="#" class="header__menu"><i class="fas fa-bars"></i></a>
+        <div class="header__menu">
+            <button class="menu__btn"><i class="fas fa-bars"></i></button>
+            <div class="menu__content">
+              <a href="#about" id="a-scroll" class="menu__item">
+                  About Me
+                  <i class="far fa-user"></i>
+                </a>
+              <a href="#services" id="s-scroll" class="menu__item">
+                  Services
+                  <i class="far fa-list-alt"></i>
+                </a>
+              <a href="#galley" id="g-scroll" class="menu__item">
+                  Latest Work
+                  <i class="far fa-calendar-alt"></i>
+                </a>
+              <a href="#experiences" id="e-scroll" class="menu__item">
+                  Experiences
+                  <i class="far fa-star"></i>
+                </a>
+              <a href="#contact" id="c-scroll" class="menu__item">
+                  Contact Me
+                  <i class="far fa-envelope"></i>
+                </a>
+                <hr class="line__hr">
+                <div class="menu__night" href="#">
+                    <p>Night Mode</p>
+                    <i class="far fa-moon"></i>
+                    <label class="switch">
+                            <input type="checkbox" id="night">
+                            <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+          </div> 
     </header>
     <div class="wrapper__top">
         <div class="heading">
@@ -28,7 +63,7 @@
             <img class="image__person" src="img/man-min.png" alt="Personal picture">
         </div>
     </div>
-    <div class="about">
+    <div id="about" class="about">
         <div class="wrapper__about">
             <div class="about__image-section">
                 <div class="about__img-border"></div>
@@ -48,7 +83,7 @@
             </div>
         </div>
     </div>
-    <div class="services">
+    <div id="services" class="services">
         <div class="wrapper__services">
             <div class="services__text-section">
                 <div class="subTitle">Services</div>
@@ -79,7 +114,7 @@
             </div>
         </div>
     </div>
-    <div class="gallery">
+    <div id="gallery" class="gallery">
         <div class="wrapper__gallery">
             <div class="gallery__text-section">
                 <div class="subTitle">Latest Work</div>
@@ -115,7 +150,7 @@
             </div>
         </div>
     </div>
-    <div class="experiences">
+    <div id="experiences" class="experiences">
         <div class="wrapper__experiences">
             <div class="experiences__text-section">
                 <div class="subTitle">Experiences</div>
@@ -144,7 +179,7 @@
             </div>
         </div>
     </div>
-    <div class="cta">
+    <div id="contact" class="cta">
         <div class="cta__bg"></div>
         <div class="cta__heading">Have any project in mind?</div>
         <div class="cta__line"></div>
