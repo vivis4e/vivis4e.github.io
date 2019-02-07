@@ -2,31 +2,31 @@ $(document).ready(function() {
     $("#a-scroll").click(function() {
         $('html, body').animate({
             scrollTop: $("#about").offset().top
-        }, 2000);
+        }, 1500);
     });
 
     $("#s-scroll").click(function() {
         $('html, body').animate({
             scrollTop: $("#services").offset().top
-        }, 2000);
+        }, 1500);
     });
 
     $("#g-scroll").click(function() {
         $('html, body').animate({
             scrollTop: $("#gallery").offset().top
-        }, 2000);
+        }, 1500);
     });
 
     $("#e-scroll").click(function() {
         $('html, body').animate({
             scrollTop: $("#experiences").offset().top
-        }, 2000);
+        }, 1500);
     });
 
     $("#c-scroll").click(function() {
         $('html, body').animate({
             scrollTop: $("#contact").offset().top
-        }, 2000);
+        }, 1500);
     });
 
     $('#night').change(function(){

@@ -48,6 +48,11 @@ table {
   font-family: "Lato", sans-serif;
 }
 
+.container {
+  position: relative;
+  overflow: hidden;
+}
+
 .active {
   color: #fecc24;
 }
@@ -122,6 +127,8 @@ table {
 .line__hr {
   border: 1px solid #f7f7f7;
   margin: 0;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
 }
 
 .btn--full {
@@ -268,36 +275,107 @@ table {
   position: relative;
   display: inline-block;
 }
+.header .header__menu:hover .menu__content .menu__item {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 0.2s ease-in-out;
+}
+.header .header__menu:hover .menu__content .menu__night {
+  transform: translateX(0px);
+  opacity: 1;
+  transition: opacity 0.35s ease-in-out 0.425s, transform 0.35s ease-in-out 0.425s;
+}
+.header .header__menu:hover .menu__content .line__hr {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out 0.4s;
+}
 .header .header__menu:hover .menu__content {
   display: block;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  height: 243px;
+  visibility: visible;
+  transition: height 0.4s ease-in-out 0.2s, visibility 0.4s ease-in-out 0.2s;
+}
+@media screen and (max-width: 730px) {
+  .header .header__menu:hover .menu__content {
+    height: 223px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .header .header__menu:hover .menu__content {
+    height: 200px;
+  }
+}
+.header .header__menu:hover .menu__content #a-scroll {
+  transition: opacity 0.1s ease-in-out 0.3s, transform 0.1s ease-in-out 0.3s;
+}
+.header .header__menu:hover .menu__content #s-scroll {
+  transition: opacity 0.15s ease-in-out 0.325s, transform 0.1s ease-in-out 0.3s;
+}
+.header .header__menu:hover .menu__content #g-scroll {
+  transition: opacity 0.2s ease-in-out 0.35s, transform 0.1s ease-in-out 0.3s;
+}
+.header .header__menu:hover .menu__content #e-scroll {
+  transition: opacity 0.25s ease-in-out 0.375s, transform 0.1s ease-in-out 0.3s;
+}
+.header .header__menu:hover .menu__content #c-scroll {
+  transition: opacity 0.3s ease-in-out 0.4s, transform 0.1s ease-in-out 0.3s;
 }
 .header .header__menu:hover .menu__btn {
-  background-color: #f7f7f7;
+  background: #f7f7f7;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  width: 160px;
+  transition: all 0.2s ease-in-out;
+}
+@media screen and (max-width: 730px) {
+  .header .header__menu:hover .menu__btn {
+    width: 130px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .header .header__menu:hover .menu__btn {
+    width: 110px;
+  }
 }
 .header .header__menu .menu__btn {
-  background: #fff;
-  width: 160px;
+  background-color: #fff;
+  width: 40px;
   height: 40px;
   border-radius: 5px;
   color: white;
   padding: 16px;
   font-size: 16px;
   border: none;
+  transition: all 0.2s ease-in-out 0.4s;
+}
+@media screen and (max-width: 730px) {
+  .header .header__menu .menu__btn {
+    width: 30px;
+    height: 30px;
+  }
 }
 .header .header__menu .menu__btn .fas {
   color: #fecc24;
   font-size: 1.2rem;
   position: absolute;
   top: 50%;
-  left: 75%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 730px) {
+  .header .header__menu .menu__btn .fas {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 520px) {
+  .header .header__menu .menu__btn .fas {
+    font-size: 0.8rem;
+  }
 }
 .header .header__menu .menu__content {
-  display: none;
+  visibility: hidden;
   position: absolute;
   left: 0px;
   top: 40px;
@@ -305,12 +383,52 @@ table {
   min-width: 160px;
   z-index: 1;
   padding-bottom: 2px;
+  height: 0;
+  transition: height 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+@media screen and (max-width: 730px) {
+  .header .header__menu .menu__content {
+    top: 32px;
+    min-width: 130px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .header .header__menu .menu__content {
+    min-width: 110px;
+  }
+}
+.header .header__menu .menu__content #a-scroll {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.header .header__menu .menu__content #s-scroll {
+  transition: opacity 0.25s ease-in-out, transform 0.3s ease-in-out;
+}
+.header .header__menu .menu__content #g-scroll {
+  transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
+}
+.header .header__menu .menu__content #e-scroll {
+  transition: opacity 0.15s ease-in-out, transform 0.3s ease-in-out;
+}
+.header .header__menu .menu__content #c-scroll {
+  transition: opacity 0.1s ease-in-out, transform 0.3s ease-in-out;
 }
 .header .header__menu .menu__content .menu__item {
   color: #33333d;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  opacity: 0;
+  transform: translateX(10px);
+}
+@media screen and (max-width: 730px) {
+  .header .header__menu .menu__content .menu__item {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 520px) {
+  .header .header__menu .menu__content .menu__item {
+    font-size: 0.6rem;
+  }
 }
 .header .header__menu .menu__content .menu__item:hover {
   background: #f7f7f7;
@@ -326,10 +444,28 @@ table {
   text-decoration: none;
   display: block;
   font-size: 0.8rem;
+  transform: translateX(10px);
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+@media screen and (max-width: 730px) {
+  .header .header__menu .menu__content .menu__night {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 520px) {
+  .header .header__menu .menu__content .menu__night {
+    font-size: 0.5rem;
+  }
 }
 .header .header__menu .menu__content .menu__night p {
   display: inline-block;
   margin-top: 4px;
+}
+@media screen and (max-width: 520px) {
+  .header .header__menu .menu__content .menu__night p {
+    margin-top: 1px;
+  }
 }
 .header .header__menu .menu__content .switch {
   position: relative;
@@ -337,6 +473,18 @@ table {
   width: 36px;
   height: 20.4px;
   float: right;
+}
+@media screen and (max-width: 730px) {
+  .header .header__menu .menu__content .switch {
+    width: 27px;
+    height: 15.3px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .header .header__menu .menu__content .switch {
+    width: calc(36px / 2);
+    height: calc(20.4px / 2);
+  }
 }
 .header .header__menu .menu__content .switch input {
   opacity: 0;
@@ -354,6 +502,20 @@ table {
   -ms-transform: translateX(15.6px);
   transform: translateX(15.6px);
 }
+@media screen and (max-width: 730px) {
+  .header .header__menu .menu__content .switch input:checked + .slider:before {
+    -webkit-transform: translateX(11.7px);
+    -ms-transform: translateX(11.7px);
+    transform: translateX(11px);
+  }
+}
+@media screen and (max-width: 520px) {
+  .header .header__menu .menu__content .switch input:checked + .slider:before {
+    -webkit-transform: translateX(7px);
+    -ms-transform: translateX(7px);
+    transform: translateX(7px);
+  }
+}
 .header .header__menu .menu__content .switch .slider {
   position: absolute;
   cursor: pointer;
@@ -368,6 +530,16 @@ table {
 .header .header__menu .menu__content .switch .round {
   border-radius: 20.4px;
 }
+@media screen and (max-width: 730px) {
+  .header .header__menu .menu__content .switch .round {
+    border-radius: 15.3px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .header .header__menu .menu__content .switch .round {
+    border-radius: calc(20.4px / 2);
+  }
+}
 .header .header__menu .menu__content .switch .round:before {
   border-radius: 50%;
 }
@@ -381,6 +553,22 @@ table {
   background-color: white;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+}
+@media screen and (max-width: 730px) {
+  .header .header__menu .menu__content .switch .slider:before {
+    height: 11.7px;
+    width: 11.7px;
+    left: 2px;
+    bottom: 2px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .header .header__menu .menu__content .switch .slider:before {
+    height: calc(15px / 2);
+    width: calc(15px / 2);
+    left: 1px;
+    bottom: 1.5px;
+  }
 }
 
 .wrapper__top {
@@ -821,6 +1009,10 @@ table {
 .services .wrapper__services .cards .card {
   padding: 60px 40px;
   border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.services .wrapper__services .cards .card:hover {
+  transform: scale(1.02);
 }
 @media screen and (max-width: 1230px) {
   .services .wrapper__services .cards .card {
