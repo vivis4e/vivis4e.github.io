@@ -53,6 +53,21 @@ table {
   overflow: hidden;
 }
 
+.card-ref-1 .ref-1, .card-ref-2 .ref-2, .card-ref-3 .ref-3, .card-ref-4 .ref-4 {
+  position: absolute;
+  top: 0;
+  left: -140%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(40deg);
+}
+
+.card-ref-1:hover .ref-1, .card-ref-2:hover .ref-2, .card-ref-3:hover .ref-3, .card-ref-4:hover .ref-4 {
+  left: 140%;
+  transition: 0.8s;
+}
+
 .active {
   color: #fecc24;
 }
@@ -1009,10 +1024,8 @@ table {
 .services .wrapper__services .cards .card {
   padding: 60px 40px;
   border-radius: 10px;
+  position: relative;
   transition: all 0.2s ease-in-out;
-}
-.services .wrapper__services .cards .card:hover {
-  transform: scale(1.02);
 }
 @media screen and (max-width: 1230px) {
   .services .wrapper__services .cards .card {
@@ -1026,6 +1039,14 @@ table {
   .services .wrapper__services .cards .card:not(:last-child) {
     margin-bottom: 10px;
   }
+}
+.services .wrapper__services .cards .card .card-ref-1, .services .wrapper__services .cards .card .card-ref-2, .services .wrapper__services .cards .card .card-ref-3, .services .wrapper__services .cards .card .card-ref-4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 .services .wrapper__services .cards .card .fas {
   color: white;
